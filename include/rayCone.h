@@ -5,6 +5,8 @@
 #include "primitives.h"
 #include "rayTracer.h"
 #include <vector>
+#include <memory>
+
 namespace TinyRT {
 
     class RayCone {
@@ -22,7 +24,6 @@ namespace TinyRT {
         int Height;
         float Fov;
         float distance;
-
-        RayTracer* tracer;
+        std::shared_ptr<RayTracer> pTracer;
     };
 }

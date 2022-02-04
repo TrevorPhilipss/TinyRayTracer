@@ -52,7 +52,7 @@ int main() {
     auto pList = GetPrimitivesList(cube_vertex, cube_index, moveMat*rotateMat*glm::mat4(5.0f));
 
 
-    RayCone rayCone(1920, 1080,RayTracerFactory::GetSimpleTracer());
+    RayCone rayCone(1920, 1080,new SimpleTracer(new BasicSampler()));
 
     rayCone.render(pList, glm::mat4(1.0f));
 

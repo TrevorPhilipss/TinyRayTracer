@@ -2,7 +2,7 @@
 
 namespace TinyRT {
     RayCone::RayCone(int width, int height, RayTracer* t, float fov, float d) :
-        Width(width), Height(height), Fov(fov), distance(d), image(width, height), tracer(t){
+        Width(width), Height(height), Fov(fov), distance(d), image(width, height), pTracer(t){
     }
 
     RayCone::~RayCone() {
@@ -33,7 +33,7 @@ namespace TinyRT {
                 glm::vec3 pixelPoint = LeftTop + horizontalRate * (float)i - verticalRate * (float)j;
 
                 Ray ray(glm::vec3(0,0,0), pixelPoint);
-                image(j, i) = tracer->trace(ray, p, transform);
+                image(j, i) = pTracer->trace(ray, p, transform);
             }
         }
     }
