@@ -7,6 +7,7 @@ namespace TinyRT {
         bool      Intersected;
         float     distance;
         glm::vec3 IntersectedPoint;
+        glm::vec3 PrimitivesNormal;
         glm::vec3 ReflectionDirection;
         glm::vec3 RefractionDirection;
     };

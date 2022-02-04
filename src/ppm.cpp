@@ -41,4 +41,13 @@ namespace TinyRT {
         return pData[row * Width + col];
     }
 
+    PPMImage & PPMImage::operator=(const PPMImage &image) {
+        Width = image.Width;
+        Height = image.Height;
+        delete[] pData;
+        pData = new PPMColor[Width * Height];
+        memcpy(pData, image.pData, sizeof(PPMColor) * Width * Height);
+        return *this;
+    }
+
 }

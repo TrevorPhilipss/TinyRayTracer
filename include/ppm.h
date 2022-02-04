@@ -16,6 +16,8 @@ namespace TinyRT {
         void save(const char* path);
 
         PPMColor& operator()(int row, int col);
+
+        PPMImage& operator=(const PPMImage& image);
     private:
         int Width;
         int Height;

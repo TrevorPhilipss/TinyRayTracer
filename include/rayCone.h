@@ -11,7 +11,7 @@ namespace TinyRT {
 
     class RayCone {
     public:
-        RayCone(int width, int height, RayTracer* t, float fov = 45.0f, float d = 1);
+        RayCone(int width, int height, RayTracer* t, float fov = 45.0f,bool antiAliasing = true, float d = 1);
         ~RayCone();
 
         PPMImage& getImage();
@@ -25,5 +25,6 @@ namespace TinyRT {
         float Fov;
         float distance;
         std::shared_ptr<RayTracer> pTracer;
+        bool AntiAliasing;
     };
 }

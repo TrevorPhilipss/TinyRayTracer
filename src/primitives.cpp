@@ -41,6 +41,7 @@ namespace TinyRT {
         if(abs(S0-S1)<0.0001) {
             result.Intersected = true;
             result.IntersectedPoint = intersectedPoint;
+            result.PrimitivesNormal = normal;
             result.ReflectionDirection = -glm::normalize(glm::reflect(normal, ray.direction()));
             //TODO:RefractionDirection
 
